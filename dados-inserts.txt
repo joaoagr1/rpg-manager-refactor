@@ -1,0 +1,49 @@
+Humanos:
+
+Descrição da Raça: Humanos em D&D são uma raça versátil e diversificada, conhecida por sua adaptabilidade e ambição. Seu espírito inquieto os leva a explorar todos os cantos do mundo, em busca de aventuras, poder e conhecimento. Eles são conhecidos por suas histórias épicas e pela capacidade de se adaptarem a qualquer situação.
+ID da Raça: 1
+
+Elfos:
+
+Descrição da Raça: Os elfos são seres graciosos e imortais, dotados de beleza e sabedoria. Vivendo em harmonia com a natureza, eles são guardiões das florestas e dos segredos antigos. Seus laços com a magia são profundos, e muitos elfos dominam os segredos das artes arcanas. No entanto, sua longa vida os torna cautelosos em relação aos assuntos dos mortais.
+ID da Raça: 2
+
+Anões:
+
+Descrição da Raça: Conhecidos por sua força e habilidade em trabalhar com metais e pedras, os anões são mestres artesãos e guerreiros destemidos. Profundamente ligados às montanhas e às cavernas, eles protegem seus lares com tenacidade e honra. Seu amor pelo trabalho duro é equiparado apenas pela sua paixão por festas e canções.
+ID da Raça: 3
+
+Halflings:
+
+Descrição da Raça: Os halflings são criaturas pequeninas, mas cheias de vida e aventura. Conhecidos por sua hospitalidade e alegria de viver, eles levam uma vida simples, desfrutando de boa comida, boa companhia e boas histórias. Apesar de seu tamanho diminuto, os halflings são conhecidos por sua coragem e habilidade em escapar de perigos.
+ID da Raça: 4
+
+Meio-Elfos:
+
+Descrição da Raça: Meio-humanos, meio-elfos, essa raça é o produto da união entre humanos e elfos. Eles herdaram a curiosidade dos humanos e a graça dos elfos, mas muitas vezes se sentem deslocados em ambas as sociedades. No entanto, essa dualidade lhes confere uma perspectiva única do mundo, tornando-os capazes de navegar por diferentes culturas com facilidade.
+ID da Raça: 5
+
+Meio-Orcs:
+
+Descrição da Raça: Nascidos da união entre humanos e orcs, os meio-orcs são frequentemente mal compreendidos e temidos pela sociedade. No entanto, sua força física e determinação os tornam guerreiros formidáveis. Apesar das adversidades que enfrentam, muitos meio-orcs encontram força em sua herança mista e lutam para provar seu valor ao mundo.
+ID da Raça: 6
+
+Gnomos:
+
+Descrição da Raça: Os gnomos são seres pequeninos e travessos, conhecidos por sua paixão pela invenção e pela descoberta. Vivendo em buracos de topos de colinas e em cavernas escondidas, eles são mestres em magia ilusória e engenhocas mecânicas. Apesar de seu tamanho diminuto, sua curiosidade os leva a explorar os mistérios do mundo e a enfrentar grandes desafios com um sorriso no rosto.
+ID da Raça: 7
+
+Tieflings:
+
+Descrição da Raça: Descendentes de humanos e seres infernais, os tieflings carregam marcas de sua herança demoníaca em suas feições e em suas almas. Muitas vezes ostracizados pela sociedade, eles lutam para encontrar seu lugar no mundo e para superar os estigmas do passado. No entanto, sua herança diabólica também lhes confere poderes sombrios e uma determinação inabalável.
+ID da Raça: 8
+
+Dragonborns:
+
+Descrição da Raça: Os dragonborns são descendentes dos dragões ancestrais, dotados de escamas resplandecentes e fôlego de fogo. Orgulhosos e nobres, eles carregam o legado de suas linhagens dragônicas, defendendo a honra e a justiça com garras afiadas e corações valentes. Seu vínculo com os dragões os torna poderosos aliados e temidos adversários.
+ID da Raça: 9
+
+Aasimars:
+
+Descrição da Raça: Nascidos da união entre humanos e seres celestiais, os aasimars são portadores de uma luz divina, destinados a realizar grandes feitos e a espalhar o bem pelo mundo. Dotados de asas de anjo e olhos radiantes, eles são mensageiros da esperança e da redenção, lutando contra as forças das trevas e protegendo os indefesos.
+ID da Raça: 10
