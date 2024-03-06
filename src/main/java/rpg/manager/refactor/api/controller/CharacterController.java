@@ -32,6 +32,12 @@ public class CharacterController {
         return ResponseEntity.ok().body(character);
     }
 
+    @GetMapping("/character/user/{userId}")
+    public ResponseEntity<List<Character>> getCharactersByUser(@PathVariable Integer userId) {
+        List<Character> character = characterRepository.findAllCharactersByUserId(userId);
+        return ResponseEntity.ok().body(character);
+    }
+
     @DeleteMapping("/character/{characterId}")
     public ResponseEntity<?> deleteCharacterById(@PathVariable Integer characterId) {
         characterRepository.deleteById(characterId);
@@ -87,8 +93,6 @@ public class CharacterController {
             character.setBackground(characterUpdate.background());
         }
 
-
-        // Atualize outros campos conforme necessário...
 
         characterRepository.save(character);
 
