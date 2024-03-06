@@ -4,9 +4,8 @@ import org.apache.velocity.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import rpg.manager.refactor.api.*;
 import rpg.manager.refactor.api.Character;
-import rpg.manager.refactor.api.CharacterRepository;
-import rpg.manager.refactor.api.CharacterUpdateDTO;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +13,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 public class CharacterController {
+
+    @Autowired
+    private SubclassRepository subclassRepository;
 
     @Autowired
     private CharacterRepository characterRepository;
@@ -44,19 +46,54 @@ public class CharacterController {
         Character character = characterRepository.findById(characterId)
                 .orElseThrow(() -> new ResourceNotFoundException("Character not found with id: " + characterId));
 
-        // Atualiza os campos do personagem com os valores fornecidos no CharacterUpdate
+        if (characterUpdate.subclass() != null) {
+            Subclass subclass = subclassRepository.findById(characterUpdate.subclass())
+                    .orElseThrow(() -> new ResourceNotFoundException("Subclass not found with id: " + characterUpdate.subclass()));
+            character.setSubclass(subclass);
+            System.out.println(subclass);
+        }
+
         if (characterUpdate.characterName() != null) {
             character.setCharacterName(characterUpdate.characterName());
         }
         if (characterUpdate.alignment() != null) {
             character.setAlignment(characterUpdate.alignment());
         }
-        // Atualize os demais campos conforme necessário
+        if (characterUpdate.characterJournal() != null) {
+            character.setCharacterJournal(characterUpdate.characterJournal());
+        }
+        if (characterUpdate.characterImage() != null) {
+            character.setCharacterImage(characterUpdate.characterImage());
+        }
+        if (characterUpdate.proficiencyBonus() != null) {
+            character.setProficiencyBonus(characterUpdate.proficiencyBonus());
+        }
+        if (characterUpdate.currentLife() != null) {
+            character.setCurrentLife(characterUpdate.currentLife());
+        }
+        if (characterUpdate.maxLife() != null) {
+            character.setMaxLife(characterUpdate.maxLife());
+        }
+        if (characterUpdate.inspiration() != null) {
+            character.setInspiration(characterUpdate.inspiration());
+        }
+        if (characterUpdate.backstory() != null) {
+            character.setBackstory(characterUpdate.backstory());
+        }
+        if (characterUpdate.movement() != null) {
+            character.setMovement(characterUpdate.movement());
+        }
+        if (characterUpdate.background() != null) {
+            character.setBackground(characterUpdate.background());
+        }
 
-        // Salva o personagem atualizado no banco de dados
+
+        // Atualize outros campos conforme necessário...
+
         characterRepository.save(character);
 
         return ResponseEntity.ok(character);
     }
+
 
 }

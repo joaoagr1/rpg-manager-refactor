@@ -77,8 +77,6 @@ public class Character {
     public Character(CharacterUpdateDTO data) {
         this.characterName = data.characterName() != null ? data.characterName() : this.characterName;
         this.alignment = data.alignment() != null ? data.alignment() : this.alignment;
-        this.subrace = data.subraceId() != null ? data.subraceId() : this.subrace;
-        this.subclass = data.subclassId() != null ? data.subclassId() : this.subclass;
         this.characterJournal = data.characterJournal() != null ? data.characterJournal() : this.characterJournal;
         this.characterImage = data.characterImage() != null ? data.characterImage() : this.characterImage;
         this.proficiencyBonus = data.proficiencyBonus() != null ? data.proficiencyBonus() : this.proficiencyBonus;

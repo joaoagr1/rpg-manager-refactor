@@ -2,8 +2,7 @@ package rpg.manager.refactor.api;
 
 public record CharacterUpdateDTO( String characterName,
                                   String alignment,
-                                  Subrace subraceId,
-                                  Subclass subclassId,
+                                  Integer subclass,
                                   String characterJournal,
                                   String characterImage,
                                   Integer proficiencyBonus,
