@@ -74,5 +74,21 @@ public class Character {
     @Size(max = 10)
     private String background;
 
+    public Character(CharacterUpdateDTO data) {
+        this.characterName = data.characterName() != null ? data.characterName() : this.characterName;
+        this.alignment = data.alignment() != null ? data.alignment() : this.alignment;
+        this.subrace = data.subraceId() != null ? data.subraceId() : this.subrace;
+        this.subclass = data.subclassId() != null ? data.subclassId() : this.subclass;
+        this.characterJournal = data.characterJournal() != null ? data.characterJournal() : this.characterJournal;
+        this.characterImage = data.characterImage() != null ? data.characterImage() : this.characterImage;
+        this.proficiencyBonus = data.proficiencyBonus() != null ? data.proficiencyBonus() : this.proficiencyBonus;
+        this.currentLife = data.currentLife() != null ? data.currentLife() : this.currentLife;
+        this.maxLife = data.maxLife() != null ? data.maxLife() : this.maxLife;
+        this.inspiration = data.inspiration() != null ? data.inspiration() : this.inspiration;
+        this.backstory = data.backstory() != null ? data.backstory() : this.backstory;
+        this.movement = data.movement() != null ? data.movement() : this.movement;
+        this.background = data.background() != null ? data.background() : this.background;
+    }
+
 }
 
