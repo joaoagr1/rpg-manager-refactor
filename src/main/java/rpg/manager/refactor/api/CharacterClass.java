@@ -6,18 +6,23 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@Entity(name="classes")
+@Entity(name = "class")
 @Table(name = "classes")
+@EqualsAndHashCode(of = "classId")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of = "classId")
 public class CharacterClass {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int classId;
+    @Column(name = "class_id")
+    private Integer classId;
 
+    @Column(name = "class_name", nullable = false, length = 50)
     private String className;
+
+    @Column(name = "class_description", nullable = false, columnDefinition = "TEXT")
     private String classDescription;
 
 }
