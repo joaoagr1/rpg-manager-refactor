@@ -1,6 +1,7 @@
 package rpg.manager.refactor.api;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,10 +18,10 @@ public class User {
     @Column(name = "user_id")
     private int userId;
 
-    @Column(name = "username", nullable = false, unique = true, length = 50)
+    @NotEmpty
     private String username;
 
-    @Column(name = "password", nullable = false, length = 255)
+    @NotEmpty
     private String password;
 
 

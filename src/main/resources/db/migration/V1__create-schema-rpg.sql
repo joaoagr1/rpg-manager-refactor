@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS characters (
     character_id INT AUTO_INCREMENT PRIMARY KEY,
     character_name VARCHAR(50) NOT NULL,
     user_id INT,
-    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
     alignment VARCHAR(50),
     race_id INT,
     FOREIGN KEY (race_id) REFERENCES races(race_id),

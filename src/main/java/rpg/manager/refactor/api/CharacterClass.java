@@ -3,6 +3,7 @@ package rpg.manager.refactor.api;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity(name="classes")
@@ -10,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(of = "classId")
 public class CharacterClass {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
