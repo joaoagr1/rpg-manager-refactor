@@ -14,26 +14,28 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Character {
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int characterId;
+    private Integer characterId;
 
     @NotEmpty
     @Size(max = 50)
     private String characterName;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @NotEmpty
+    @JoinColumn(name = "race_id")
+    private Race race;
 
     @Size(max = 50)
     @NotEmpty
     private String alignment;
-
-    @ManyToOne
-    @NotEmpty
-    @JoinColumn(name = "race_id")
-    private Race race;
 
     @ManyToOne
     @JoinColumn(name = "subrace_id")
@@ -41,7 +43,7 @@ public class Character {
 
     @ManyToOne
     @JoinColumn(name = "class_id")
-    private DnDClass dndClass;
+    private CharacterClass characterClass;
 
     @ManyToOne
     @JoinColumn(name = "subclass_id")
@@ -66,7 +68,7 @@ public class Character {
     @NotEmpty
     private String backstory;
 
-    @NotEmpty
+   // @NotEmpty
     private int movement;
 
     @Size(max = 10)

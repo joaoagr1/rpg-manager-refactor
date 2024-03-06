@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS characters (
     max_life INT,
     inspiration BOOL DEFAULT FALSE,
     backstory TEXT,
-    movement INT,
+    movement INT DEFAULT 0,
     background Varchar(20),
     INDEX idx_user_id (user_id),
     INDEX idx_race_id (race_id),
