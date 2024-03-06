@@ -1,13 +1,13 @@
-package rpg.manager.refactor.api;
+package rpg.refactor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RpgManagerApplication {
+public class RpgManagerRefactorApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RpgManagerApplication.class, args);
+		SpringApplication.run(RpgManagerRefactorApplication.class, args);
 	}
 
 }

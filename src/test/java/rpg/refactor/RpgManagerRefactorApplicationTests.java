@@ -1,10 +1,10 @@
-package rpg.manager.refactor.api;
+package rpg.refactor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RpgManagerApplicationTests {
+class RpgManagerRefactorApplicationTests {
 
 	@Test
 	void contextLoads() {
