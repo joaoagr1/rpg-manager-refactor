@@ -11,13 +11,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Subclass {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int subclassId;
 
     @ManyToOne
     @JoinColumn(name = "class_id")
     private CharacterClass characterClass;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int subclassId;
 
     private String subclassName;
     private String subclassDescription;
