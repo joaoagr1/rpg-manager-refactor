@@ -22,4 +22,9 @@ public class Subclass {
     private String subclassName;
     private String subclassDescription;
 
+
+    public Subclass(SubclassCreateDTO newSubclass) {
+        this.subclassName = newSubclass.subClassName();
+        this.subclassDescription = newSubclass.subClassDescription();
+    }
 }

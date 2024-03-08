@@ -1,5 +1,6 @@
 package rpg.manager.refactor.api.controller;
 
+import jakarta.validation.Valid;
 import org.apache.velocity.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -35,15 +36,18 @@ public class SubclassController {
     }
 
     @PostMapping("/subclasses")
-    public ResponseEntity<Subclass> createNewSubclass(@RequestBody SubclassCreateDTO newSubclass) {
+    public ResponseEntity<Subclass> createNewSubclass(@RequestBody @Valid SubclassCreateDTO newSubclass) {
+        CharacterClass newClass = classRepository.findById(newSubclass.classId())
+                .orElseThrow(() -> new ResourceNotFoundException("Class not found with id: " ));
 
-        Subclass subclass = new Subclass(SubclassCreateDTO);
-        subclass.setName(newSubclass.getName());
+        Subclass subclass = new Subclass(newSubclass);
+        subclass.setCharacterClass(newClass);
 
         Subclass savedSubclass = subclassRepository.save(subclass);
 
         return ResponseEntity.ok(savedSubclass);
     }
+
 
 
     @DeleteMapping("/subclasses/{subclassesId}")
