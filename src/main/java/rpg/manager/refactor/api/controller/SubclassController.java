@@ -17,6 +17,9 @@ public class SubclassController {
     @Autowired
     private SubclassRepository subclassRepository;
 
+    @Autowired
+    private CharacterClassRepository classRepository;
+
 
     @GetMapping("/subclasses")
     public ResponseEntity<List<Subclass>> getAllSubclasses() {
@@ -31,25 +34,17 @@ public class SubclassController {
         return ResponseEntity.ok().body(subclasses);
     }
 
-    @PostMapping("/subclasses/{subclassId}")
+    @PostMapping("/subclasses")
     public ResponseEntity<Subclass> createNewSubclass(@RequestBody SubclassCreateDTO newSubclass) {
 
-        CharacterClass characterClass = subclassRepository.findById(newSubclass.())
+        Subclass subclass = new Subclass(SubclassCreateDTO);
+        subclass.setName(newSubclass.getName());
 
+        Subclass savedSubclass = subclassRepository.save(subclass);
 
-        if (characterUpdate.subclass() != null) {
-            Subclass subclass = subclassRepository.findById(characterUpdate.subclass())
-                    .orElseThrow(() -> new ResourceNotFoundException("Subclass not found with id: " + characterUpdate.subclass()));
-            character.setSubclass(subclass);
-            System.out.println(subclass);
-        }
-
-
-
-        characterRepository.save(character);
-
-        return ResponseEntity.ok(character);
+        return ResponseEntity.ok(savedSubclass);
     }
+
 
     @DeleteMapping("/subclasses/{subclassesId}")
     public ResponseEntity<?> deleteSublass(@PathVariable Integer subClassId) {
