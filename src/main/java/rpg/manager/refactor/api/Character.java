@@ -42,9 +42,6 @@ public class Character {
     @JoinColumn(name = "class_id")
     private CharacterClass characterClass;
 
-    @ManyToOne
-    @JoinColumn(name = "subclass_id")
-    private Subclass subclass;
 
     @NotEmpty
     private String characterJournal;

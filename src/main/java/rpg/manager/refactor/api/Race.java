@@ -18,12 +18,11 @@ public class Race {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int raceId;
 
-    @Transient
-    private Subrace subrace;
-
     @NotEmpty
     private String raceName;
     @NotEmpty
     private String raceDescription;
+    @Transient
+    private Subrace subrace;
 
 }

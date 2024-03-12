@@ -52,12 +52,7 @@ public class CharacterController {
         Character character = characterRepository.findById(characterId)
                 .orElseThrow(() -> new ResourceNotFoundException("Character not found with id: " + characterId));
 
-        if (characterUpdate.subclass() != null) {
-            Subclass subclass = subclassRepository.findById(characterUpdate.subclass())
-                    .orElseThrow(() -> new ResourceNotFoundException("Subclass not found with id: " + characterUpdate.subclass()));
-            character.setSubclass(subclass);
-            System.out.println(subclass);
-        }
+
 
         if (characterUpdate.characterName() != null) {
             character.setCharacterName(characterUpdate.characterName());

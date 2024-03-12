@@ -12,12 +12,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Subclass {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer subclassId;
+
     @ManyToOne
     @JoinColumn(name = "class_id")
     private CharacterClass characterClass;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int subclassId;
+
 
     private String subclassName;
     private String subclassDescription;

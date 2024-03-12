@@ -25,4 +25,7 @@ public class CharacterClass {
     @Column(name = "class_description", nullable = false, columnDefinition = "TEXT")
     private String classDescription;
 
+    @Transient
+    private Subclass subclass;
+
 }
