@@ -7,9 +7,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@Entity(name="races")
+@Entity(name = "races")
 @Table(name = "races")
-@EqualsAndHashCode(of="raceId")
+@EqualsAndHashCode(of = "raceId")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,6 +17,9 @@ public class Race {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int raceId;
+
+    @Transient
+    private Subrace subrace;
 
     @NotEmpty
     private String raceName;

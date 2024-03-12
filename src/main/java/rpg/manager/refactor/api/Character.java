@@ -37,9 +37,6 @@ public class Character {
     @NotEmpty
     private String alignment;
 
-    @ManyToOne
-    @JoinColumn(name = "subrace_id")
-    private Subrace subrace;
 
     @ManyToOne
     @JoinColumn(name = "class_id")
