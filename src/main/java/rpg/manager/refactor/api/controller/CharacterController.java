@@ -21,4 +21,7 @@ public class CharacterController {
     public List<Character_> getAllCharacters() {
         return characterRepository.findAll();
     }
+
+
+
 }

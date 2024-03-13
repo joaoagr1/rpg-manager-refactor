@@ -6,19 +6,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-@Entity
-@Table(name = "classes")
+@Entity(name="subraces")
+@Table(name = "subraces")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Classe {
+@NoArgsConstructor
+public class Subrace {
     @Id
     @JsonIgnore
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long classId;
-    private String className;
-    private String classDescription;
+    private int subraceId;
 
+    private String subraceName;
 
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "race_id")
+    private Race race;
+
+    private String subraceDescription;
 }

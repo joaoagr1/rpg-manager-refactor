@@ -162,12 +162,6 @@ CREATE TABLE IF NOT EXISTS attribute_points (
 );
 
 
-CREATE TABLE IF NOT EXISTS features (
-    feature_id INT AUTO_INCREMENT PRIMARY KEY,
-    feature_name VARCHAR(50) NOT NULL,
-    feature_description TEXT
-);
-
 
 CREATE TABLE IF NOT EXISTS character_features (
     character_id INT,

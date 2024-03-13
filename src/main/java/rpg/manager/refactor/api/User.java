@@ -2,23 +2,28 @@ package rpg.manager.refactor.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-@Entity
-@Table(name = "classes")
+@Entity(name = "users")
+@Table(name = "users")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Classe {
+@NoArgsConstructor
+public class User {
     @Id
-    @JsonIgnore
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long classId;
-    private String className;
-    private String classDescription;
+    @Column(name = "user_id")
+    @JsonIgnore
+    private int userId;
+
+    @NotEmpty
+    private String username;
+
+    @NotEmpty
+    private String password;
 
 
 }

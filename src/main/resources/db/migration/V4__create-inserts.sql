@@ -632,8 +632,8 @@ INSERT INTO subclass_features (subclass_id, level, subclass_feature_name, subcla
 
 -- Fazendo Inserts de testes -------------------------------------------------------------------------------------------------
 INSERT INTO users (username, password) VALUES ('novousuario', 'senhadonovousuario');
-INSERT INTO characters (subclass_id, character_name, user_id, alignment, race_id, class_id, character_journal, character_image, proficiency_bonus, current_life, max_life, inspiration)
-VALUES (1,'Novo Personagem', 1, 'Neutro', 1, 1, 'Minha primeira aventura', 'imagem.png', 2, 100,100, false);
+INSERT INTO characters (subrace_id,subclass_id, character_name, user_id, alignment, race_id, class_id, character_journal, character_image, proficiency_bonus, current_life, max_life, inspiration)
+VALUES (1,1,'Novo Personagem', 1, 'Neutro', 1, 1, 'Minha primeira aventura', 'imagem.png', 2, 100,100, false);
 
 INSERT INTO character_spells values (1,1);
 INSERT INTO character_spells values (1,2);

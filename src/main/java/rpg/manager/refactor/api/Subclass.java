@@ -6,8 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Entity
 @Table(name = "subclasses")
 @NoArgsConstructor
@@ -26,7 +24,5 @@ public class Subclass {
     @JoinColumn(name = "class_id")
     private Classe classe;
 
-    @OneToMany(mappedBy = "subclass", cascade = CascadeType.ALL)
-    private List<Feature> subclassFeatures;
 
 }
