@@ -1,13 +1,8 @@
 package rpg.manager.refactor.api;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
-public interface CharacterRepository extends JpaRepository<Character,Integer> {
-
-    @Query("SELECT c FROM character c WHERE c.user.userId = :userId")
-    List<Character> findAllCharactersByUserId(@Param("userId") Integer userId);
+@Repository
+public interface CharacterRepository extends JpaRepository <Character_,Integer> {
 }

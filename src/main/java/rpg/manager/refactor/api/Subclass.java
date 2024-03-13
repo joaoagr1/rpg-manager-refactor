@@ -1,30 +1,32 @@
 package rpg.manager.refactor.api;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name="subclasses")
+import java.util.List;
+
+@Entity
 @Table(name = "subclasses")
-@Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Subclass {
-
-    @ManyToOne
-    @JoinColumn(name = "class_id")
-    private CharacterClass characterClass;
     @Id
+    @JsonIgnore
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int subclassId;
-
+    private Long subclassId;
     private String subclassName;
     private String subclassDescription;
 
+    @ManyToOne
+    @JsonIgnore
+    @JoinColumn(name = "class_id")
+    private Classe classe;
 
-    public Subclass(SubclassCreateDTO newSubclass) {
-        this.subclassName = newSubclass.subClassName();
-        this.subclassDescription = newSubclass.subClassDescription();
-    }
+    @OneToMany(mappedBy = "subclass", cascade = CascadeType.ALL)
+    private List<Feature> subclassFeatures;
+
 }

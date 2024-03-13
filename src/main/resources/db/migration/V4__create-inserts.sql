@@ -1,4 +1,4 @@
--- Fazendo Inserts Padrões ------------------------------------------------------------------------------------
+    -- Fazendo Inserts Padrões ------------------------------------------------------------------------------------
 INSERT INTO races (race_name, race_description) VALUES
 ('Humanos', 'Humanos em D&D são uma raça versátil e diversificada, conhecida por sua adaptabilidade e ambição. Seu espírito inquieto os leva a explorar todos os cantos do mundo, em busca de aventuras, poder e conhecimento.'),
 ('Elfos', 'Os elfos são seres graciosos e imortais, dotados de beleza e sabedoria. Vivendo em harmonia com a natureza, eles são guardiões das florestas e dos segredos antigos. Seus laços com a magia são profundos, e muitos elfos dominam os segredos das artes arcanas. No entanto, sua longa vida os torna cautelosos em relação aos assuntos dos mortais.'),
@@ -632,8 +632,8 @@ INSERT INTO subclass_features (subclass_id, level, subclass_feature_name, subcla
 
 -- Fazendo Inserts de testes -------------------------------------------------------------------------------------------------
 INSERT INTO users (username, password) VALUES ('novousuario', 'senhadonovousuario');
-INSERT INTO characters (character_name, user_id, alignment, race_id, class_id, character_journal, character_image, proficiency_bonus, current_life, max_life, inspiration)
-VALUES ('Novo Personagem', 1, 'Neutro', 1, 1, 'Minha primeira aventura', 'imagem.png', 2, 100,100, false);
+INSERT INTO characters (subclass_id, character_name, user_id, alignment, race_id, class_id, character_journal, character_image, proficiency_bonus, current_life, max_life, inspiration)
+VALUES (1,'Novo Personagem', 1, 'Neutro', 1, 1, 'Minha primeira aventura', 'imagem.png', 2, 100,100, false);
 
 INSERT INTO character_spells values (1,1);
 INSERT INTO character_spells values (1,2);

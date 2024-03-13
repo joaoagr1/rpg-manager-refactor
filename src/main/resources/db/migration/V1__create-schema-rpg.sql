@@ -203,3 +203,16 @@ CREATE TABLE IF NOT EXISTS skills (
     stealth INT,
     survival INT
 );
+
+CREATE TABLE IF NOT EXISTS feature (
+    feature_id INT AUTO_INCREMENT PRIMARY KEY,
+    subclass_id INT,
+    class_id INT,
+    level INT,
+    feature_name VARCHAR(50) NOT NULL,
+    feature_description TEXT NOT NULL,
+    type VARCHAR(255) DEFAULT 'Class',
+    FOREIGN KEY (subclass_id) REFERENCES subclasses(subclass_id),
+        FOREIGN KEY (class_id) REFERENCES classes(class_id)
+
+);
