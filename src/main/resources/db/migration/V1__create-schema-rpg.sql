@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS racial_traits (
     race_id INT,
     FOREIGN KEY (race_id) REFERENCES races(race_id),
     racial_trait_level INT,
-    racial_trait_description TEXT,
     racial_trait_name varchar(255),
-    type varchar(255) DEFAULT 'Racial',
+    racial_trait_description TEXT,
+        type varchar(255) DEFAULT 'Racial',
     INDEX idx_race_id (race_id)
 );
 
@@ -41,6 +41,8 @@ CREATE TABLE IF NOT EXISTS subracial_traits (
     subracial_trait_level INT,
     subracial_traits_name VARCHAR(50),
     subracial_trait_description TEXT,
+    type varchar(255) DEFAULT 'Subracial',
+
     INDEX idx_subrace_id (subrace_id)
 );
 
@@ -78,6 +80,8 @@ CREATE TABLE IF NOT EXISTS subclass_features (
     level INT,
     subclass_feature_name VARCHAR(50) NOT NULL,
     subclass_feature_description TEXT NOT NULL,
+     type varchar(255) DEFAULT 'Subclass',
+
     INDEX idx_subclass_id (subclass_id)
 );
 
@@ -161,6 +165,12 @@ CREATE TABLE IF NOT EXISTS attribute_points (
     PRIMARY KEY (character_id)
 );
 
+
+CREATE TABLE IF NOT EXISTS features (
+    feature_id INT AUTO_INCREMENT PRIMARY KEY,
+    feature_name VARCHAR(50) NOT NULL,
+    feature_description TEXT
+);
 
 
 CREATE TABLE IF NOT EXISTS character_features (

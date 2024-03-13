@@ -22,6 +22,6 @@ public class Feature {
     private Subclass subclass;
 
     @ManyToOne
-    @JoinColumn(name = "class_id")  // Adicionado para referenciar a coluna correta
-    private Classe classe;  // Mantida a relação com a entidade Classe
+    @JoinColumn(name = "class_id")
+    private Classe classe;
 }

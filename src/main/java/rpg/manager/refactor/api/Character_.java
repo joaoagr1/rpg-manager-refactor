@@ -41,6 +41,7 @@ public class Character_ {
     private int movement;
     private String background;
 
+
     @ManyToOne
     @JoinColumn(name = "class_id")
     private Classe classe;
