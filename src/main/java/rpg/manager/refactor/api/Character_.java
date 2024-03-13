@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity(name = "characters")
@@ -41,6 +42,8 @@ public class Character_ {
     private int movement;
     private String background;
 
+    @Getter
+    private Integer level;
 
     @ManyToOne
     @JoinColumn(name = "class_id")

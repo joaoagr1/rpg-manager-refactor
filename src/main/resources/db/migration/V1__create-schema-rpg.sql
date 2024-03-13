@@ -96,6 +96,7 @@ CREATE TABLE IF NOT EXISTS characters (
     FOREIGN KEY (race_id) REFERENCES races(race_id),
     subrace_id INT,
     FOREIGN KEY (subrace_id) REFERENCES subraces(subrace_id),
+    level INT DEFAULT 5,
     class_id INT,
     FOREIGN KEY (class_id) REFERENCES classes(class_id),
     subclass_id INT,

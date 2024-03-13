@@ -32,9 +32,9 @@ public class CharacterController {
 
     @GetMapping("/character/traits/{characterId}")
     public List<Map<String, Object>> getAllTraits(@PathVariable Integer characterId) {
-     Optional<Character_> character = characterRepository.findById(characterId);
-     Integer currentLevel = character.ge
-        return characterTraitRepository.findCharacterTraits(characterId);
+     Optional<Character_> characterPicked = characterRepository.findById(characterId);
+     Integer currentLevel = characterPicked.get().getLevel();
+        return characterTraitRepository.findCharacterTraits(characterId,currentLevel);
     }
 
 

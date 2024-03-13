@@ -34,7 +34,7 @@ public interface CharacterTraitRepository extends JpaRepository<CharacterTrait, 
                 "    INNER JOIN subclass_features sf ON sf.subclass_id = ch.subclass_id " +
                 "    WHERE ch.character_id = 1 " +
                 ") AS all_results " +
-                "WHERE Nível <= 10 ", nativeQuery = true)
-        List<Map<String, Object>> findCharacterTraits(Integer characterId);
+                "WHERE Nível <= ?2 ", nativeQuery = true)
+        List<Map<String, Object>> findCharacterTraits(Integer characterId,Integer currentLevel);
     }
 
