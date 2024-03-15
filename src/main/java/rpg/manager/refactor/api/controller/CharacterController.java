@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import rpg.manager.refactor.api.CharacterFeaturesRepository;
 import rpg.manager.refactor.api.CharacterRepository;
-import rpg.manager.refactor.api.CharacterTraitRepository;
+import rpg.manager.refactor.api.CharacterTrait;
 import rpg.manager.refactor.api.Character_;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -22,7 +22,7 @@ public class CharacterController {
     private CharacterRepository characterRepository;
 
     @Autowired
-    private CharacterTraitRepository characterTraitRepository;
+    private CharacterFeaturesRepository characterFeaturesRepository;
 
     @GetMapping("/character")
     public List<Character_> getAllCharacters() {
@@ -31,10 +31,10 @@ public class CharacterController {
 
 
     @GetMapping("/character/traits/{characterId}")
-    public List<Map<String, Object>> getAllTraits(@PathVariable Integer characterId) {
+    public List<CharacterTrait> getAllTraits(@PathVariable Integer characterId) {
      Optional<Character_> characterPicked = characterRepository.findById(characterId);
      Integer currentLevel = characterPicked.get().getLevel();
-        return characterTraitRepository.findCharacterTraits(characterId,currentLevel);
+        return characterFeaturesRepository.findCharacterTraits(characterId,currentLevel);
     }
 
 
