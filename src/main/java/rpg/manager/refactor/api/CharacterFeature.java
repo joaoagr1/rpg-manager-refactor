@@ -15,13 +15,16 @@ import lombok.NoArgsConstructor;
 public class CharacterFeature {
 
     @Id
+    @JsonIgnore
     private Integer id;
 
+    @JsonIgnore
     private Integer characterId;
     private String name;
     private String description;
     private Integer level;
     private String type;
+    @JsonIgnore
     private String source;
 
     private CharacterFeature(CharacterFeatureDAO characterFeatureDAO) {
