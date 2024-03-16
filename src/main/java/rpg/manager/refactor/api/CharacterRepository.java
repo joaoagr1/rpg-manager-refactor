@@ -37,7 +37,7 @@ public interface CharacterRepository extends JpaRepository <Character_,Integer> 
             "    WHERE ch.character_id = :characterId " +
             ") AS all_results " +
             "WHERE level <= :currentLevel ", nativeQuery = true)
-    List<CharacterFeaturesDAO> findCharacterFeatures(@Param("characterId") Integer characterId, @Param("currentLevel") Integer currentLevel);
+    List<?> findCharacterFeatures(@Param("characterId") Integer characterId, @Param("currentLevel") Integer currentLevel);
 
 }
 
